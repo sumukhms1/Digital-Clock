@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initian-scale=1.0">
+    <title>Digital Clock Using JavaScript - Sumukh MS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="clock">
+                <span id="HOURS">00</span>
+                <span>:</span>
+                <span id="MINUTES">00</span>
+                <span>:</span>
+                <span id="SECONDS">00</span>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let HOURS = document.getElementById("HOURS");
+        let MINUTES = document.getElementById("MINUTES");
+        let SECONDS = document.getElementById("SECONDS");
+
+        setInterval(()=>{ 
+        let currentTime = new Date();
+        HOURS.innerHTML = (currentTime.getHours()<10?"0":"") + currentTime.getHours();
+        MINUTES.innerHTML = (currentTime.getMinutes()<10?"0":"") + currentTime.getMinutes();
+        SECONDS.innerHTML = (currentTime.getSeconds()<10?"0":"") + currentTime.getSeconds();
+
+        },1000)
+
+        
+      
+    </script>
+
+</body>
+</html>
